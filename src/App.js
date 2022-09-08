@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import {Route, Routes } from 'react-router-dom';
+import Home from './componentes/home';
+import PanelAdministrador from './componetesAdmin/PanelAdministrador';
+import Redirigir from './componentes/Redirigir';
+import PaginaSecciones from './componentes/PaginaSecciones';
 
 function App() {
+
+  const [activeTab, setActiveTab] = useState("1");
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home setActiveTab={setActiveTab}/>}/>
+        <Route path="/sesiones" element={<PaginaSecciones activeTab={activeTab} setActiveTab={setActiveTab}/>}/>
+        <Route path="/admin" element={<PanelAdministrador />}/>
+        <Route path="*" element={<Redirigir />} />
+      </Routes>
   );
 }
 
