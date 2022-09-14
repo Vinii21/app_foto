@@ -83,6 +83,11 @@ const galeria = [
             {alt: 'Novios besandose', img: novios6}
         ]
     },
+
+
+
+
+    
     {
         id: 2, 
         titulo: 'Familia', 

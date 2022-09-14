@@ -1,12 +1,15 @@
-import React from "react";
-import { galeria } from "../assets/media_fichero";
+import React, {useContext} from "react";
 import styled from 'styled-components';
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
-const Albunes = (props) => {
+const Albunes = () => {
+
+    const {DatosGaleria, activeTab} = useContext(ContextoBaseDatos);
+
     return (
         <>
                 {
-                    galeria[props.activeTab - 1 ].albun.map((foto)=>{
+                   DatosGaleria[activeTab - 1 ].albun.map((foto)=>{
                         return(
                             <div className="row d-flex flex-row flex-wrap">
                                 <div className="col-4">

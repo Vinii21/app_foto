@@ -2,14 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import Tarjetas from "./Tarjetas";
 
-const Galeria = (props) => {
+const Galeria = ({setActiveTab, DBgaleria, cambiar}) => {
     return (
         <ContenedorGaleria>
             <ContenedorTitulo>
                 <h2 id="galeria">Galeria</h2>
             </ContenedorTitulo>
             <Galerias>
-                <Tarjetas setActiveTab={props.setActiveTab}/>
+                <Tarjetas setActiveTab={setActiveTab} DBgaleria={DBgaleria} cambiar={cambiar}/>
             </Galerias>
         </ContenedorGaleria>
     );

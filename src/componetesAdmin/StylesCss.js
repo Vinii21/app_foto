@@ -15,7 +15,7 @@ const Form = styled.form`
     }
 
     &:hover{
-        background: rgba(0,0,50,0.1);
+        background: rgba(75,83,88,0.1);
     }
 
     h2{
@@ -32,8 +32,8 @@ const FormEditar = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 380px;
-    height: 432px;
+    width: 390px;
+    height: 200px;
 
     span{
         font-size: 100px;
@@ -72,6 +72,10 @@ const Span = styled.span`
         color: #000;
     }
 
+    ${props => props.nuevo && css`
+    background: #87B6A7;
+    `}
+
     ${props => props.logo && css`
         background: url(${HomePage.logos});
         background-position: center;
@@ -98,14 +102,16 @@ const Span = styled.span`
 
 const Boton = styled.button`
     margin-top: 10px;
-    background: #ccc;
+    background: #104547;
     box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
     border: none;
     transition: 1s ease all;
+    color: #fff;
 
     &:hover{
+        color: #000;
         border: none;
-        background: #d9c;
+        background: #73AB84;
         box-shadow: 0 0px 7px 0 rgba(0,0,0,0.5);
     }
 

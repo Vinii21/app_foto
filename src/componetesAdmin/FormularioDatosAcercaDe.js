@@ -1,8 +1,10 @@
-import React from "react";
-import { AcercaDe } from "../assets/media_fichero";
+import React, {useContext} from "react";
 import { Label, Form, Span, Boton, H2 } from "./StylesCss";
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
 const FormularioDatosAcercaDE = () => {
+    const {DatosGaleria} = useContext(ContextoBaseDatos);
+
     const onSubmit = (e)=> {
         e.preventDefault();
     };

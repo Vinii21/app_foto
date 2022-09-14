@@ -1,13 +1,12 @@
-import React from "react";
-import { useState } from "react";
+import React, {useContext, useState} from "react";
 import { Fuentes } from "../CCS";
-import { galeria } from "../assets/media_fichero";
 import styled from "styled-components";
 import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
+const FormularioAgendarSesion = () => {
+    const {DatosGaleria, activeTab} = useContext(ContextoBaseDatos)
 
-
-const FormularioAgendarSesion = (props) => {
     const [nombre, cambiarNombre] = useState('');
     const [telefono, cambiarTelefono] = useState('');
     const [correo, cambiarCorreo] = useState('');
@@ -73,18 +72,18 @@ const FormularioAgendarSesion = (props) => {
                         <form onSubmit={onSubmit}>
                             <div className="row">
                                 <div className="col">
-                                    <label for="nombre" className="form-label">Nombre completo</label>
+                                    <label htmlFor="nombre" className="form-label">Nombre completo</label>
                                     <span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-person-bounding-box"></span>
                                         <input name="nombre" id="nombre" value={nombre} onChange={onChange} type="text" className="form-control" placeholder="Nombre y Apellido"/>
                                     </div>
-                                    <label for="telefono" className="form-label my-2">Teléfono</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
+                                    <label htmlFor="telefono" className="form-label my-2">Teléfono</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-telephone-plus-fill"></span>
                                         <input name="telefono" id="telefono" value={telefono} onChange={onChange} type="tel" className="form-control" placeholder="Número celular o fijo"/>
                                     </div>
-                                    <label for="correo" className="form-label my-2">Correo eléctronico</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
+                                    <label htmlFor="correo" className="form-label my-2">Correo eléctronico</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-envelope-fill"></span>
                                         <input name="correo" id="correo" value={correo} onChange={onChange} type="email" className="form-control" placeholder="Escribe tú E-mail"/>
@@ -92,13 +91,13 @@ const FormularioAgendarSesion = (props) => {
                                 </div>
 
                                 <div className="col">
-                                    <label for="lista" className="form-label">Ocasión</label>
+                                    <label htmlFor="lista" className="form-label">Ocasión</label>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-list"></span>
                                         <select id="lista" className="form-select">
                                             {
-                                                galeria.map((servicio)=>{
-                                                    if(props.activeTab == servicio.id){
+                                                DatosGaleria.map((servicio)=>{
+                                                    if(activeTab == servicio.id){
                                                         return(
                                                             <option>{servicio.titulo}</option>
                                                         );
@@ -109,12 +108,12 @@ const FormularioAgendarSesion = (props) => {
                                         </select>
                                     </div>
 
-                                    <label for="sesion" className="form-label my-2">Sesión escogida</label>
+                                    <label htmlFor="sesion" className="form-label my-2">Sesión escogida</label>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-camera"></span>
                                         <select id="sesion" className="form-select">
                                             {
-                                              galeria[props.activeTab - 1].items.map((sesion)=>{
+                                              DatosGaleria[activeTab - 1].items.map((sesion)=>{
                                                 return(
                                                     <option value={sesion.titulo}>{sesion.titulo}</option>
                                                 )
@@ -123,7 +122,7 @@ const FormularioAgendarSesion = (props) => {
                                         </select>
                                     </div>
 
-                                    <label for="fecha" className="form-label my-2">Fecha deseada</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
+                                    <label htmlFor="fecha" className="form-label my-2">Fecha deseada</label><span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
                                     <div className="input-group w-100">
                                         <span style={{fontSize:"24px"}} className="input-group-text bi bi-calendar-month-fill"></span>
                                         <input name="fecha" id="fecha" class="form-control" type="date" value={fecha} onChange={onChange} placeholder={fecha}/>

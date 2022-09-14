@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
-import { galeria } from "../assets/media_fichero";
 import { Link, animateScroll as scroll } from "react-scroll";
 import './tarjetas.css'
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
 
-const Seccion = (props) => {
+const Seccion = () => {
+
+    const {DatosGaleria, activeTab} = useContext(ContextoBaseDatos);
 
     return (
             <>
             {
-                galeria[props.activeTab - 1].items.map((item) => 
+                DatosGaleria[activeTab - 1].items.map((item) => 
                 {
                     return(
                         <div className="row">

@@ -7,12 +7,15 @@ import * as bootstrap from 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { img } from './assets/media_fichero';
+import { ProveedorBaseDatos } from './contexto/ContextoBaseDatos';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
   <BrowserRouter>
-        <App />
+    <ProveedorBaseDatos>
+      <App />
+    </ProveedorBaseDatos>
   </BrowserRouter>
   </React.StrictMode>
 );

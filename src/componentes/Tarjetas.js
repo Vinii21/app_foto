@@ -1,27 +1,30 @@
-import React from "react";
+import React, {useContext} from "react";
 import styled from "styled-components";
-import { galeria } from "../assets/media_fichero";
 import { NavLink } from "react-router-dom";
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
-const Tarjetas = (props) => {
+const Tarjetas = () => {
+    
+    const {DatosGaleria, setActiveTab} = useContext(ContextoBaseDatos)
+
     return (       
         <>
         {
-        galeria.map((cuadro)=>{
+        DatosGaleria.map((cuadro)=>{
             return (
                 
                 <ContenedorTarjeta  key={cuadro.id} style={{background:"url("+cuadro.fondo+")", 
                  backgroundSize: "cover", backgroundPosition: "center", backgroundRepeat: "no-repeat"}}>
                     <FondoTarjeta>
                         <ContenedorInfo>
-                            <h3>{cuadro.titulo}</h3>
+                            <h3 >{cuadro.titulo}</h3>
                             <p>
                                 {cuadro.texto} 
                             </p>
                             <NavLink 
                                 to="/sesiones"
                                 className="enlace"
-                                onClick={()=>props.setActiveTab(cuadro.id)}
+                                onClick={()=>setActiveTab(cuadro.id)}
                             >Detalles</NavLink>
                         </ContenedorInfo>
                     </FondoTarjeta> 
@@ -40,9 +43,6 @@ const ContenedorTarjeta = styled.div`
     margin: 10px;
     border-radius: 1%;
 
-    .boda{
-        border: 20px solid #ff0;
-    }
 `;
 
 const FondoTarjeta = styled.div`

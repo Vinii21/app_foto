@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
 import FormularioDatosHeader from "../componetesAdmin/FormularioDatosHeader";
 import FormularioDatosAcercaDE from "./FormularioDatosAcercaDe";
 import FormularioEditarServicios from "./FormularioEditarServicios";
 import FormularioNuevaCategoria from "./FormularioNuevaCategoria";
+import FormularioEditarCaracteristicas from "./FormularioEditarCaracteristicas";
+import FormularioAlbun from "./FormularioAlbun";
+import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
 
 const PaginaAdmin = () => {
-    const [ activeTab, setActiveTab ] = useState("1");
+    const {activeTab, setActiveTab} = useContext(ContextoBaseDatos);
 
     const cambiarTab = (numTab) => {
         if(activeTab !== numTab){
@@ -46,8 +49,9 @@ const PaginaAdmin = () => {
 
                             <TabPane tabId="2">
                                 <div className="container">
-                                    <br/>
-                                    Section section section
+                                    <h2 className="mt-2">Panel de Tarjetas</h2>
+                                    <FormularioEditarCaracteristicas />
+                                    <FormularioAlbun />
                                 </div>
                             </TabPane>
                         </TabContent>

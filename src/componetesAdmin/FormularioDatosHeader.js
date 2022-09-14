@@ -24,7 +24,7 @@ const FormularioDatosHeader = () => {
                 <h2>Datos Header</h2>
                 <div className="row">
                     <div className="col-4">
-                            <Label className="form-label" for="fondo">Fondo de header</Label>
+                            <Label className="form-label" htmlFor="fondo">Fondo de header</Label>
                             <Span className="input-group-text bi bi-pencil-square">
                                 <input id="fondo" className="form-control" accept="image/png,image/jpeg" type="file"/>
                             </Span>

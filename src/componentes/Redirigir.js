@@ -5,7 +5,7 @@ const Redirigir = () => {
     
     return (
              <>
-                {/* <Navigate replace to="/"/> */}
+                <Navigate replace to="/"/>
                 <h1>ERROR 404</h1>
             </>
        
