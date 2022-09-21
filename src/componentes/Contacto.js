@@ -1,6 +1,6 @@
 import React from "react";
 import { icon } from "../assets/media_fichero";
-import styled from "styled-components";
+import {ContenedorContacto, ContenedorRedes, ContenedorInfoContacto, ContenedorMapa} from '../styles/model';
 
 
 const Contacto = () => {
@@ -53,85 +53,5 @@ const Contacto = () => {
         </ContenedorContacto>
     );
 }
-
-const ContenedorContacto = styled.div`
-    width: 1000px;
-    height: 500px;
-    margin: 0 auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-`;
-
-const ContenedorRedes = styled.div`
-    height: 400px;
-    width: 88px;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-top: 2px solid rgb(105, 104, 104);
-    border-left: 2px solid rgb(105, 104, 104);
-    border-bottom: 2px solid rgb(105, 104, 104);
-
-    span{
-        margin-bottom: 20px
-    }
-
-    img{
-        width: 30px;
-        cursor: pointer;
-    }
-`;
-
-const ContenedorInfoContacto = styled.div`
-    width: 50%;
-    height: 540px;
-    position: relative;
-    top: -5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(105, 104, 104);
-
-    h2{
-        width: 80%;
-        margin: 0 auto;
-        margin-bottom: 30px;
-        font-weight: 900;
-        text-align: center;
-        font-size: 30px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid rgb(50, 50, 60);
-        color: rgb(48, 46, 46);
-    }
-
-    div{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 0 10%;
-        margin-bottom: 20px;
-        width: 65%;
-    }
-
-    img{
-        width: 60px;
-        margin-right: 20px;
-    }
-`;
-
-const ContenedorMapa = styled.div`
-    height: 400px;
-    width: 600px;
-    border-top: 2px solid rgb(105, 104, 104);
-    border-right: 2px solid rgb(105, 104, 104);
-    border-bottom: 2px solid rgb(105, 104, 104);
-`;
  
 export default Contacto;

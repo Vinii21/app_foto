@@ -51,6 +51,7 @@ const img = [
     {alt: 'Textura fondo main', img: textura1}
 ]
 
+
 const galeria = [
     {
         id: 1, 
@@ -83,11 +84,6 @@ const galeria = [
             {alt: 'Novios besandose', img: novios6}
         ]
     },
-
-
-
-
-    
     {
         id: 2, 
         titulo: 'Familia', 
@@ -190,6 +186,10 @@ const galeria = [
         ]
     }
 ]
+
+
+
+
 
 const icon = [
     {alt: 'Logo empresa', img: logo},

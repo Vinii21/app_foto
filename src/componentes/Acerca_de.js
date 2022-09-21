@@ -1,55 +1,41 @@
-import React from "react";
+import React, {useRef} from "react";
 import { AcercaDe } from "../assets/media_fichero";
-import styled from "styled-components";
-import Galeria from "./Galeria";
+import {useTransform, useScroll} from "framer-motion";
+import {ContenedorAcercaDe, ContenedorImg, ContenedorInfo} from '../styles/model'
 
-const Acerca_De = () => {
+
+
+function Acerca_De() {
+    
+    function useParallax(value, distance) {
+        return useTransform(value, [0, 1], [-distance, distance]);
+    }
+    const ref = useRef(null);
+    const {scrollYProgress} = useScroll({target: ref})
+    const windowwidth = window.innerWidth;
+    const y = useParallax(scrollYProgress, 300);
+
     return (
-        <>
-        <ContenedorAcercaDe>
-            <ContenedorImg id="sobre">
+       <ContenedorAcercaDe id="sobre" ref={ref}>
+            <ContenedorImg >
                 <img src={AcercaDe.logos} alt={AcercaDe.altLogo} width='100'/>
             </ContenedorImg>
-            <ContenedorInfo>
+            {
+                windowwidth > 900 ?
+                <ContenedorInfo style={{y}}>
+                    <h2>{AcercaDe.Nombre}</h2>
+                    <p>{AcercaDe.Text1}</p>
+                    <p>{AcercaDe.Text2}</p>
+                </ContenedorInfo>
+                :
+                <ContenedorInfo>
                 <h2>{AcercaDe.Nombre}</h2>
                 <p>{AcercaDe.Text1}</p>
-                <br/>
                 <p>{AcercaDe.Text2}</p>
-            </ContenedorInfo>
-        </ContenedorAcercaDe>
-        </>
+                </ContenedorInfo>
+            }
+       </ContenedorAcercaDe> 
     );
 }
-
-const ContenedorAcercaDe = styled.div`
-    overflow: visible;
-    position: relative;  
-`;
-
-const ContenedorImg = styled.div`
-    width: 50%;
-    position: absolute;
-    left: 200px;
-    top: 50px;
-    z-index: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.421);
-
-    img{
-        vertical-align: top;
-        width: 100%;   
-    }
-`;
-
-const ContenedorInfo = styled.div`
-    background-color: #fff;
-    padding: 30px;
-    width: 30%;
-    position: relative;
-    top: 180px;
-    right: 220px;
-    float: right;
-    z-index: 1;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.231); 
-`;
  
 export default Acerca_De;

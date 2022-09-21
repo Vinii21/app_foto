@@ -8,7 +8,7 @@ import PaginaSecciones from './componentes/PaginaSecciones';
 function App() {
   
   return (
-      <Routes>
+    <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/sesiones" element={<PaginaSecciones />}/>
         <Route path="/admin" element={<PanelAdministrador />}/>

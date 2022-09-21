@@ -5,14 +5,14 @@ import Galeria from './Galeria';
 import Contacto from './Contacto';
 import Footer from './Footer'
 
-const Home = ({setActiveTab}) => {
+const Home = () => {
 
     return (
         <>
             <Header/>
                 <main>
                     <AcercaDe/>
-                    <Galeria setActiveTab={setActiveTab}/>
+                    <Galeria />
                     <Contacto />
                 </main>
                 <Footer />

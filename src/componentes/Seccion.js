@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import './tarjetas.css'
 import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 

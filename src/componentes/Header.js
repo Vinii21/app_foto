@@ -1,8 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
-import styled from "styled-components";
-import {img, HomePage} from '../assets/media_fichero';
-import { motion } from "framer-motion";
+import {Headerr, ContendorHero} from '../styles/model'
+import { HomePage } from "../assets/media_fichero";
 
 const Header = () => {
     return (
@@ -16,51 +15,5 @@ const Header = () => {
     </Headerr>
     );
 }; 
-
-const Headerr = styled.header`
-    width: 100%;
-    height: 100vh;
-    background: url('${HomePage.background}');
-    background-repeat: no-repeat;
-    background-position: center -120px;
-    background-size: cover;
-    background-attachment: fixed;
-`;
-
-const ContendorHero = styled(motion.div)`
-    position: relative;
-    top: 130px;
-    width: 1000px;
-    height: 100vh;
-    margin: 0 auto;
-    padding-top: 130px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center; 
-    opacity: 0;  
-
-    h1{
-        font-family: 'Nanum Gothic', sans-serif;
-        font-weight: bold;
-        font-size: 40px;
-        color: #fff;
-        border: 1px solid #fff;
-        padding: 20px;   
-    }
-    span{
-        background-color: #fff;
-        clip-path: polygon(50% 69%, 100% 35%, 100% 65%, 50% 100%, 50% 100%, 0 65%, 1% 35%);
-        position: relative;
-        top: 100px;
-        width: 60px;
-        height: 60px;   
-    }
-    .row{
-        width: 40px;
-        height: 40px;
-        margin-bottom: 20px;
-    }
-`;
  
 export default Header;
