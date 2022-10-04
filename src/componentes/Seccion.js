@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import { Link } from "react-scroll";
-import './tarjetas.css'
+import '../styles/seccion.css';
 import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
 
@@ -38,11 +38,12 @@ const Seccion = () => {
 
 const Card = styled.div`
     width: 310px;
-    height: 450px;
+    height: 100%;
     max-height: 400px;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
     border:none;
     color: #fff;
+    margin-bottom: 100px;
 
     h2{
         border-bottom: 1px solid #000;
@@ -81,6 +82,13 @@ const Card = styled.div`
 
     a:hover{
         box-shadow: 0 0px 7px 0 rgba(0,0,0,0.5);
+    }
+
+    @media screen and (max-width: 1300px){
+        width: 310px;
+        height: auto;
+        padding: 5px;
+        margin-bottom: 5px;
     }
 `;
  

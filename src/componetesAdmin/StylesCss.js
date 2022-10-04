@@ -1,4 +1,3 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import styled, {css} from "styled-components";
 import { HomePage, AcercaDe } from "../assets/media_fichero";
 

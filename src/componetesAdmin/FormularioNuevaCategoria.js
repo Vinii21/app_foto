@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Form, FormEditar, Label, Span, Boton } from "./StylesCss";
-import { Modal, ModalBody, ModalHeader } from "reactstrap";
+import { Modal, ModalBody } from "reactstrap";
 import styled from "styled-components";
+
 
 const FormularioNuevaCategoria = () => {
     const [modal, mostrarModal] = useState(false);

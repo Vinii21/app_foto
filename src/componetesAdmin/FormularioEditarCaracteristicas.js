@@ -1,4 +1,5 @@
 import React, {useContext} from "react";
+import BotonNuevaCaracteristica from "./BotonNuevaCaracteristica";
 import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 import {Form, Label, Boton, BotonDel} from './StylesCss';
 
@@ -43,6 +44,7 @@ const FormularioEditarCaracteristicas = () => {
                     :
                     <>Hola</>
                 }
+                <BotonNuevaCaracteristica />
         </div>
         </>
     );

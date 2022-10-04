@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "./Logo";
 import Navegacion from "./Navegacion";
-import { ContenedorMenu } from "../styles/model";
+import styled from "styled-components";
 
 const Menu = () => {
     return (
@@ -11,5 +11,16 @@ const Menu = () => {
        </ContenedorMenu> 
     );
 }
+
+export const ContenedorMenu = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @media screen and (max-width: 830px){
+        flex-direction: column;
+    }
+`;
  
 export default Menu;

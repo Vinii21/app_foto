@@ -71,7 +71,7 @@ const FormularioAgendarSesion = () => {
                     <div className="card-body">
                         <form onSubmit={onSubmit}>
                             <div className="row">
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <label htmlFor="nombre" className="form-label">Nombre completo</label>
                                     <span style={{color:"red", fontSize:"13px", paddingLeft: "3px"}} className="bi bi-asterisk"></span>
                                     <div className="input-group w-100">
@@ -90,7 +90,7 @@ const FormularioAgendarSesion = () => {
                                     </div>
                                 </div>
 
-                                <div className="col">
+                                <div className="col-sm-12 col-md-6">
                                     <label htmlFor="lista" className="form-label">Ocasión</label>
                                     <div className="input-group w-100">
                                         <span className="input-group-text bi bi-list"></span>
@@ -177,6 +177,14 @@ const Boton = styled.button`
     position: relative;
     left: 565px;
     margin-top: 10px;
+
+    @media screen and (max-width: 750px){
+        left: 165px; 
+    }
+
+    @media screen and (max-width: 500px) {
+        left: 70px;
+    }
 `;
  
 export default FormularioAgendarSesion;

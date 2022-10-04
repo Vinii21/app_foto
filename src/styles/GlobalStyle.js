@@ -10,5 +10,10 @@ export const GlobalStyle = createGlobalStyle`
   body{
     overflow-x: hidden;
     cursor: default;
-  } 
+  }
+
+  .leaflet-container {
+    width: 100%;
+    height: 100%;
+  }
 `

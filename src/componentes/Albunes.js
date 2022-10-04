@@ -39,6 +39,16 @@ const ContenedorImagen = styled.div`
         filter: sepia(0%); 
     }
 
+    @media screen and (max-width: 780px) {
+        filter: sepia(0%);
+        height: 230px;
+        width: 230px;
+    }
+
+    @media screen and (max-width: 500px) {
+        width: 320px;
+    }
+
 `;
 
  

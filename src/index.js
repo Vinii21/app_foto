@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
@@ -14,8 +14,8 @@ root.render(
   <React.StrictMode>
   <BrowserRouter>
     <ProveedorBaseDatos>
-      <GlobalStyle />
-      <App />
+        <GlobalStyle />
+        <App />
     </ProveedorBaseDatos>
   </BrowserRouter>
   </React.StrictMode>

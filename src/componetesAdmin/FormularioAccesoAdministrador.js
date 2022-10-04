@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled from 'styled-components';
 import { Fuentes, Colores } from "../CCS";
+import { NavLink } from "react-router-dom";
 
 const FormularioAccesoAdministrador = (props) => {
     const [ usuario, cambiarInputUsuario ] = useState('');
@@ -56,6 +57,7 @@ const FormularioAccesoAdministrador = (props) => {
                             />
                         <button className="btn btn-primary" type="submit">Iniciar Sesión</button>
                     </Formulario>
+                    <NavLink style={{background: "#fff"}} to="/" className="btn btn-secundary" >Volver al Home</NavLink>
                 </div>
             </div>
         </ContenedorFormulario>

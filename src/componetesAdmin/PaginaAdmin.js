@@ -6,6 +6,7 @@ import FormularioEditarServicios from "./FormularioEditarServicios";
 import FormularioNuevaCategoria from "./FormularioNuevaCategoria";
 import FormularioEditarCaracteristicas from "./FormularioEditarCaracteristicas";
 import FormularioAlbun from "./FormularioAlbun";
+import EditarContacto from "./EditarContacto";
 import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 
 
@@ -45,6 +46,7 @@ const PaginaAdmin = () => {
                                     <FormularioEditarServicios />
                                     <FormularioNuevaCategoria />
                                 </div>
+                                <EditarContacto />
                             </TabPane>
 
                             <TabPane tabId="2">

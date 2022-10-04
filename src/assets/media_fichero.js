@@ -8,13 +8,6 @@ import gastronomia from './img/gastronomia.jpg';
 import mascotas from './img/mascota.jpg';
 import espacio from './img/espacio.jpg';
 import productos from './img/bolso.jpg';
-import facebook from './icon/facebook.png';
-import youtube from './icon/YOUTUBE.png';
-import instagram from './icon/instagram.ico';
-import telefono from './icon/phone.png';
-import whatsapp from './icon/Whatsapp.webp';
-import mapa from './icon/mpa.png';
-import correo from './icon/email.png';
 import pareja1 from './img/pareja.jpg';
 import pareja2 from './img/boda.jpg';
 import novios1 from './img/novios1.jpg';
@@ -73,6 +66,13 @@ const galeria = [
                 precio: "$100",
                 fondo: pareja1,
                 class: "basicSesion"
+            },
+            {
+                titulo: "Sesión Avanzada",
+                servicios: ['50 fotos editadas de manera profesional en alta resolución', 'Cinco vestuario', '5 horas de sesión fotográfica'],
+                precio: "$600",
+                fondo: pareja1,
+                class: "basicSesion"
             }
         ],
         albun: [
@@ -120,6 +120,14 @@ const galeria = [
                 servicios: ['30 fotos editadas de manera profesional en alta resolución', 'Platillos a gusto del cliente', '4.5 horas aprox. de sesión fotográfica'],
                 precio: "$300"
             }
+        ],
+        albun: [
+            {alt: 'Novios mirandose', img: novios1},
+            {alt: 'Novios bailando', img: novios2},
+            {alt: 'Novios de fondo', img: novios3},
+            {alt: 'Novia', img: novios4},
+            {alt: 'Novios sentados', img: novios5},
+            {alt: 'Novios besandose', img: novios6}
         ]
     },
     {
@@ -141,7 +149,15 @@ const galeria = [
                 precio: "$100",
                 fondo: pareja2
             }
-        ] 
+        ],
+        albun: [
+            {alt: 'Novios mirandose', img: novios1},
+            {alt: 'Novios bailando', img: novios2},
+            {alt: 'Novios de fondo', img: novios3},
+            {alt: 'Novia', img: novios4},
+            {alt: 'Novios sentados', img: novios5},
+            {alt: 'Novios besandose', img: novios6}
+        ]
     },
     {
         id: 5, 
@@ -162,6 +178,14 @@ const galeria = [
                 precio: "$100",
                 fondo: pareja2
             }
+        ],
+        albun: [
+            {alt: 'Novios mirandose', img: novios1},
+            {alt: 'Novios bailando', img: novios2},
+            {alt: 'Novios de fondo', img: novios3},
+            {alt: 'Novia', img: novios4},
+            {alt: 'Novios sentados', img: novios5},
+            {alt: 'Novios besandose', img: novios6}
         ]
     },
     {
@@ -183,23 +207,27 @@ const galeria = [
                 precio: "$100",
                 fondo: pareja2
             }
+        ],
+        albun: [
+            {alt: 'Novios mirandose', img: novios1},
+            {alt: 'Novios bailando', img: novios2},
+            {alt: 'Novios de fondo', img: novios3},
+            {alt: 'Novia', img: novios4},
+            {alt: 'Novios sentados', img: novios5},
+            {alt: 'Novios besandose', img: novios6}
         ]
     }
 ]
 
+export {img, galeria, HomePage, AcercaDe};
 
-
-
-
-const icon = [
-    {alt: 'Logo empresa', img: logo},
-    {alt: 'Instagram', img: instagram},
-    {alt: 'Facebook', img: facebook},
-    {alt: 'Youtube', img: youtube},
-    {alt: 'WhatsApp', img: whatsapp},
-    {alt: 'Teléfono', img: telefono},
-    {alt: 'Email', img: correo},
-    {alt: 'Dirección', img: mapa}
-]
-
-export {img, icon, galeria, HomePage, AcercaDe};
+export const viaContacto = {
+    instagram: 'https://www.instagram.com/',
+    facebook: 'https://www.facebook.com/',
+    youtube: 'https://www.youtube.com/',
+    whatsapp: '+506 000 000',
+    telefono: '+506 000 000',
+    correo: 'correo@correo.com',
+    direccion: 'Estamos ubicados en ...',
+    mapa: 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d572839.0638893053!2d-112.29532069433033!3d60.02300674870576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1663976754506!5m2!1ses!2scr',
+}

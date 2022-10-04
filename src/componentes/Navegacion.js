@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { Nav } from "../styles/model";
+import styled from "styled-components";
 
 const Navegacion = () => {
 
@@ -13,5 +13,28 @@ const Navegacion = () => {
         </Nav>
     );
 }
+
+const Nav = styled(motion.nav)`
+    margin-right: 50px;
+    display: flex;
+
+    li{
+        list-style: none;
+        color: #fff;
+        a{
+            padding: 0px 10px;
+            font-family: 'Nanum Gothic', sans-serif;
+            font-weight: bold;
+            font-size: 18px;
+            position: relative;
+            top: -100px; 
+            
+        }
+    }
+
+    @media screen and (max-width: 830px){
+        margin: 0px;
+    }
+`;
  
 export default Navegacion;
