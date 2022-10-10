@@ -118,7 +118,8 @@ const galeria = [
             {
                 titulo: "Sesión Completa",
                 servicios: ['30 fotos editadas de manera profesional en alta resolución', 'Platillos a gusto del cliente', '4.5 horas aprox. de sesión fotográfica'],
-                precio: "$300"
+                precio: "$300",
+                class: "fullSesion"
             }
         ],
         albun: [
@@ -141,13 +142,15 @@ const galeria = [
                 titulo: "Sesión Completa",
                 servicios: ['25 fotos editadas de manera profesional en alta resolución', 'Dos vestuarios', '2.5 horas de sesión fotográfica'],
                 precio: "$270",
-                fondo: pareja1 
+                fondo: pareja1,
+                class: "fullSesion"
             },
             {
                 titulo: "Sesión Basica",
                 servicios: ['10 fotos editadas de manera profesional en alta resolución', 'Un vestuario', '1 hora de sesión fotográfica'],
                 precio: "$100",
-                fondo: pareja2
+                fondo: pareja2,
+                class: "fullSesion"
             }
         ],
         albun: [
@@ -170,13 +173,15 @@ const galeria = [
                 titulo: "Sesión Completa",
                 servicios: ['25 fotos editadas de manera profesional en alta resolución', 'Dos vestuarios', '2.5 horas de sesión fotográfica'],
                 precio: "$270",
-                fondo: pareja1 
+                fondo: pareja1,
+                class: "fullSesion"
             },
             {
                 titulo: "Sesión Basica",
                 servicios: ['10 fotos editadas de manera profesional en alta resolución', 'Un vestuario', '1 hora de sesión fotográfica'],
                 precio: "$100",
-                fondo: pareja2
+                fondo: pareja2,
+                class: "fullSesion"
             }
         ],
         albun: [
@@ -199,13 +204,8 @@ const galeria = [
                 titulo: "Sesión Completa",
                 servicios: ['25 fotos editadas de manera profesional en alta resolución', 'Dos vestuarios', '2.5 horas de sesión fotográfica'],
                 precio: "$270",
-                fondo: pareja1 
-            },
-            {
-                titulo: "Sesión Basica",
-                servicios: ['10 fotos editadas de manera profesional en alta resolución', 'Un vestuario', '1 hora de sesión fotográfica'],
-                precio: "$100",
-                fondo: pareja2
+                fondo: pareja1,
+                class: "fullSesion"
             }
         ],
         albun: [
@@ -219,8 +219,6 @@ const galeria = [
     }
 ]
 
-export {img, galeria, HomePage, AcercaDe};
-
 export const viaContacto = {
     instagram: 'https://www.instagram.com/',
     facebook: 'https://www.facebook.com/',
@@ -231,3 +229,5 @@ export const viaContacto = {
     direccion: 'Estamos ubicados en ...',
     mapa: 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d572839.0638893053!2d-112.29532069433033!3d60.02300674870576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2scr!4v1663976754506!5m2!1ses!2scr',
 }
+
+export {img, galeria, HomePage, AcercaDe};

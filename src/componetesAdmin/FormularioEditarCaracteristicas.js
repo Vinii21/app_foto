@@ -4,7 +4,7 @@ import { ContextoBaseDatos } from "../contexto/ContextoBaseDatos";
 import {Form, Label, Boton, BotonDel} from './StylesCss';
 
 const FormularioEditarCaracteristicas = () => {
-    const {DatosGaleria, activeEdit, prueba } = useContext(ContextoBaseDatos);
+    const {DatosGaleria, activeEdit, funcionActiveEdit } = useContext(ContextoBaseDatos);
 
     return (
         <>
@@ -14,7 +14,7 @@ const FormularioEditarCaracteristicas = () => {
                     {
                         DatosGaleria.map((item)=>{
                             return(
-                                <option onClick={()=>prueba(item.id)} value={item.titulo}>{item.titulo}</option>
+                                <option onClick={()=>funcionActiveEdit(item.id)} value={item.titulo}>{item.titulo}</option>
                             );
                         })
                     }

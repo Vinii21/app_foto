@@ -4,7 +4,7 @@ import FormularioAccesoAdministrador from './FormularioAccesoAdministrador';
 import PaginaAdmin from "../componetesAdmin/PaginaAdmin";
 
 const PanelAdministrador = () => {
-    const [session, cambiarSession] = useState(false);
+    const [session, cambiarSession] = useState(true);
 
     return (
         <>
