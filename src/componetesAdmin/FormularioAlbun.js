@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import preLoad from "../assets/gifts/Circles-menu-3.gif";
 import { Fuentes, Colores } from "../CCS";
 
 const FormularioAlbun = () => {
 
     const file = document.getElementById('file');
+    const preLoad = document.querySelector('.preload');
     const formData = new FormData();
-
     
     const changeFile = (e) => {
         const createCloseButton = (miniatura_id) => {
@@ -35,19 +34,37 @@ const FormularioAlbun = () => {
         /* e.target.value = ''; */
     };
 
+    //Boton de publicar
     const publicar = (e) => {
         e.preventDefault();
-        alert("Estamos trabajando en subirlo a la Base de datos");
-        const nuevasImg = file.files;
-        console.log(nuevasImg);
+        if (file.files.length === 0) {
+            alert("No has seleccionado ninguna imagen")
+        } else {
+            limpiarFormDataYMiniatura();
+            const nuevasImg = file.files;
+            console.log(nuevasImg[0]);          
+        }
+        /* alert("Estamos trabajando en subirlo a la Base de datos"); */
+        
     };
 
+    const limpiarFormDataYMiniatura  = () => {
+        for (var key of formData.keys()) {
+            formData.delete(key);
+        };
+
+        document.querySelectorAll('.miniatura').forEach((miniatura) => {
+            miniatura.remove();
+        })
+    }
+
+    //Evento click para quitar cada imagen se se sube
     document.body.addEventListener('click', (e) => {
         if (e.target.classList.contains('close-button')) {
             e.target.parentNode.remove();
             formData.delete(e.target.parentNode.dataset.id);
         }
-    })
+    });
 
     return (
         <>
@@ -58,10 +75,10 @@ const FormularioAlbun = () => {
                     <div className="wrap-file">
                         <form onSubmit={(e)=>publicar(e)} className="contenedor-iconCamera">
                             <input onChange={(e)=>changeFile(e)} type="file" id="file" name="file[]" multiple />
-                            <span className="bi bi-camera-fill"><small>Presiona el icono para subir nuevas imagenes</small></span>
+                            <span className="bi bi-camera-fill"><small>Presiona la camara para subir nuevas imagenes</small></span>
                             <hr/>
                             <div className="preview-img" id="preview-img">
-
+                            
                             </div>
                             <button type="submit" className="btn-publicar" id="publicar">Publicar</button>
                         </form>
